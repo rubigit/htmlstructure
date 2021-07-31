@@ -19,62 +19,48 @@
                 <h1 class="appName">TO DO LIST</h1>
             </div>
             <form class="topForm">
-                <input class="taskInput" type="text">
-                <button>Add</button>
+                <input class="taskInput" value="Enter your task" type="text">
+                <button class="addTask">Add</button>
             </form>
         </header>
 
-        <section class="rootItem">
-            <div class="itemContainer">
-                <p class="checkItem"><span class="checkmarkUnchecked">&check;</span><span
-                        class="itemTaskNameUnchecked">Task name</span></p>
-                <div>
-                    <button>Edit</button>
-                    <button>xx</button>
+        <ul class="rootItem">
+            <li class="itemContainer">
+                <div class="checkItem">
+                    <input class="checkbox" type="checkbox" name="taskName" value="taskName" id="taskID1">
+                    <label class="labelTaskName itemTaskNameUnchecked" for="taskID1">Task name</label>
+                    <!-- <input class="labelTaskName itemTaskNameEdit" type="text" value="Editing task name"> -->
                 </div>
-            </div>
-            <div class="itemContainer">
-                <p class="checkItem"><span class="checkmarkChecked">&check;</span><span class="itemTaskNameChecked">Task
-                        name</span></p>
                 <div>
-                    <button>Edit</button>
-                    <button>xx</button>
+                    <button class="editSave">Ed</button>
+                    <button class="delete">xx</button>
                 </div>
-            </div>
+            </li>
 
-            <div class="itemContainer">
-                <p class="checkItem"><span class="checkmarkChecked">&check;</span><span class="itemTaskNameEdit">Task
-                        name</span></p>
+            <li class="itemContainer">
+                <div class="checkItem">
+                    <input class="checkbox" type="checkbox" name="taskName" value="taskName" id="taskID2">
+                    <label class="labelTaskName itemTaskNameChecked" for="taskID2">Task name</label>
+                    <!-- <input class="labelTaskName itemTaskNameEdit" type="text" value="Editing task name"> -->
+                </div>
                 <div>
-                    <button>Edit</button>
-                    <button>xx</button>
+                    <button class="editSave">Ed</button>
+                    <button class="delete">xx</button>
                 </div>
-            </div>
+            </li>
 
-            <div class="itemContainer">
-                <p class="checkItem"><span class="checkmarkChecked">&check;</span><span class="itemTaskNameEdit">Task
-                        name</span></p>
+            <li class="itemContainer">
+                <div class="checkItem">
+                    <input class="checkbox" type="checkbox" name="taskName" value="taskName" id="taskID3">
+                    <!-- <label class="labelTaskName itemTaskNameUnchecked" for="taskID1">Task name</label> -->
+                    <input class="labelTaskName itemTaskNameEdit" type="text" value="Editing task name">
+                </div>
                 <div>
-                    <button>Edit</button>
-                    <button>xx</button>
+                    <button class="editSave">Sa</button>
+                    <button class="delete">xx</button>
                 </div>
-            </div>
-
-
-
-
-
-            <ul class="itemContainer">
-                <li class="checkItem"><input type="checkbox" name="color" value="black" id="black">
-                    <label for="black">Black</label>
-                    <div>
-                        <button>Edit</button>
-                        <button>xx</button>
-                    </div>
-                </li>
-            </ul>
-
-        </section>
+            </li>
+        </ul>
 
 
     </main>

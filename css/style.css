@@ -7,12 +7,12 @@ html, body {
 body {
 	min-height: 100vh;
   	margin:0; 
-	background: rgb(196,231,226);
-	/* background: linear-gradient(229deg, 
-	rgba(196,231,226,1) 0%, rgba(223,196,231,1) 47%, 
-	rgba(196,225,231,1) 65%);
+	background: rgb(245, 212, 180);
+	background: linear-gradient(229deg, 
+	rgb(192, 144, 11) 0%, rgba(245, 212, 180) 47%, 
+	rgb(231, 189, 75) 65%);
 	background-repeat: no-repeat;
-    background-attachment: fixed; */
+    background-attachment: fixed;
 
 }
 
@@ -65,7 +65,7 @@ html{
 
 .topHeader{
     display: grid;
-    grid-template-columns: auto 2fr;
+    
     gap: calc(var(--pad-gap)/2);
     padding: calc(var(--pad-gap)*1.5) var(--pad-gap);
  
@@ -78,6 +78,7 @@ html{
     display: flex;
     flex:1 1 auto;
     align-items: center;
+    justify-content: center;
     gap: calc(var(--pad-gap)/2);
 
     /* border:0.02em solid rgb(70, 194, 146); */
@@ -93,13 +94,14 @@ html{
 }
 
 
-.appName{
+/* .appName{
     display: none;
-}
+} */
 
 .topForm{
-    display: flex;
-    flex:1 1 auto;
+   display: grid;
+    grid-template-columns: 2fr auto;
+    /* flex:1 1 auto; */
     gap: calc(var(--pad-gap)/2);
 
     /* border:0.02em solid rgb(70, 194, 146); */
@@ -107,8 +109,18 @@ html{
 }
 
 .taskInput{
-    display: flex;
-    flex:1 1 auto;
+    /* display: flex;
+    flex:1 2 auto;
+    flex-shrink: 2;
+    flex-grow: 1; */
+    padding: calc(var(--pad-gap)/2) var(--pad-gap); 
+    /* width: 100% */
+}
+
+.addTask{
+    /* width: 2em; */
+    /* flex-shrink: 1;
+    flex-wrap: wrap; */
 }
 
 
@@ -116,8 +128,11 @@ html{
 /* :::::::::::::::LIST OF TASK SECTION ::::::::::::::::::::::::: */
 
 .rootItem{
+    display: flex;
+    flex-direction: column;
     min-height: 100vh;
     padding: 0;
+    gap: calc(var(--pad-gap)/6);
     
     /* background-color: rgb(255, 255, 255); */
 }
@@ -128,30 +143,34 @@ html{
     padding: var(--pad-gap);
     gap: calc(var(--pad-gap)/2);
 
-    border:0.02em solid rgb(70, 194, 146);
-    background-color: rgb(192, 126, 20);
+    align-items: center;
+
+    /* border:0.02em solid rgb(70, 194, 146); */
+    background-color: rgb(221, 129, 25);
 }
 
 .checkItem{
     display: flex;
+    flex: 0 2 auto;
     gap: calc(var(--pad-gap)/2);
-    border:0.02em solid rgb(70, 194, 146);
-    background-color: rgb(192, 20, 183);   
+    align-items: center;
+    
+
+
+
+    /* border:0.02em solid rgb(70, 194, 146); */
+    /* background-color: rgb(192, 20, 183);    */
 }
 
-
-.checkmarkUnchecked{
-    visibility: hidden;
+.checkbox{
+    flex-shrink: 3; 
 }
 
-
-
-
-
-.checkmarkChecked{
-    visibility: visible;
+.labelTaskName{
+    width: 100%;
+    padding: var(--pad-gap);
+    flex-shrink: 3;
 }
-
 
 .itemTaskNameChecked{
     color: rgb(255, 255, 255);
@@ -160,22 +179,21 @@ html{
 
 .itemTaskNameUnchecked{
     color: rgb(0, 0, 0);
-    text-decoration: none;
 }
 
 .itemTaskNameEdit{
-    background-color: springgreen;
-    width: 100%;
+
+    color: rgb(24, 119, 228);
+    background-color: rgb(251, 251, 251);
+    flex-shrink: 3;
+    
 }
 
 
-/* ///////////////////////////// */
-
-
-
-
-
-/* ///////////////////////////////// */
+.editSave, .delete{
+    width: 1.2em;
+    height: 1.5em;
+}
 
 /* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
 /* :::::::::::::::MEDIA QUERY ::::::::::::::::::::::::: */
@@ -190,12 +208,27 @@ html{
   @media screen and (min-width: 55em) {
 
     .topHeader{
-        padding: calc(var(--pad-gap)*1.5) calc(var(--pad-gap)*4);
+        grid-template-columns: auto 2fr;
+        padding: calc(var(--pad-gap)*2.5) calc(var(--pad-gap)*6.5);
        
+    }
+
+    .logoWrap{
+        display: flex;
+        flex:1 1 auto;
+        align-items: center;
+        gap: calc(var(--pad-gap)/2);
+    
     }
 
     .rootItem{
         padding: 0 calc(var(--pad-gap)*6.5);
+    }
+
+
+    .editSave, .delete{
+        width: 1.7em;
+        height: 2em;
     }
   }
   
