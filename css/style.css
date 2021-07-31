@@ -1,0 +1,201 @@
+/* :::::::::::::::::::::::::::RESETS :::::::::::::::::::::::::::::::::::::::: */
+html, body {
+	height: 100%;
+	box-sizing: border-box;
+}
+
+body {
+	min-height: 100vh;
+  	margin:0; 
+	background: rgb(196,231,226);
+	/* background: linear-gradient(229deg, 
+	rgba(196,231,226,1) 0%, rgba(223,196,231,1) 47%, 
+	rgba(196,225,231,1) 65%);
+	background-repeat: no-repeat;
+    background-attachment: fixed; */
+
+}
+
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+
+
+
+* {
+  font-size: 1em;
+  font-weight: 400;
+  text-decoration: none;
+  line-height: 1.2; 
+  margin: 0;
+  padding:0;  
+}
+
+ul, ol { 
+	list-style-type: none;
+}
+  
+img{
+	max-width: 100%;
+	width: auto;
+	height: auto;
+	vertical-align: bottom;
+}
+
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+
+/* ::::::::::::::::::::::::::::::VARIABLES :::::::::::::::::::::::::::::: */
+html{
+    --pad-gap:1em; /* paddings and gaps */  
+}
+	
+
+.hide{
+    display: none;
+}
+
+
+
+.main{
+    display: grid;
+}
+
+
+/* :::::::::::::::::::::::HEADER SECTION::::::::::::::::::::::::::: */
+
+.topHeader{
+    display: grid;
+    grid-template-columns: auto 2fr;
+    gap: calc(var(--pad-gap)/2);
+    padding: calc(var(--pad-gap)*1.5) var(--pad-gap);
+ 
+
+    /* border:0.02em solid rgb(70, 194, 146); */
+    /* background-color: rgb(197, 218, 17); */
+}
+
+.logoWrap{
+    display: flex;
+    flex:1 1 auto;
+    align-items: center;
+    gap: calc(var(--pad-gap)/2);
+
+    /* border:0.02em solid rgb(70, 194, 146); */
+    /* background-color: rgb(218, 141, 17); */
+}
+
+.logo{
+    width: 2em;
+    height: 2em;
+
+    border:0.02em solid rgb(70, 194, 146);
+    background-color: rgb(54, 17, 218);
+}
+
+
+.appName{
+    display: none;
+}
+
+.topForm{
+    display: flex;
+    flex:1 1 auto;
+    gap: calc(var(--pad-gap)/2);
+
+    /* border:0.02em solid rgb(70, 194, 146); */
+    /* background-color: rgb(192, 126, 20); */
+}
+
+.taskInput{
+    display: flex;
+    flex:1 1 auto;
+}
+
+
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+/* :::::::::::::::LIST OF TASK SECTION ::::::::::::::::::::::::: */
+
+.rootItem{
+    min-height: 100vh;
+    padding: 0;
+    
+    /* background-color: rgb(255, 255, 255); */
+}
+
+.itemContainer{
+    display: grid;
+    grid-template-columns:  2fr auto;
+    padding: var(--pad-gap);
+    gap: calc(var(--pad-gap)/2);
+
+    border:0.02em solid rgb(70, 194, 146);
+    background-color: rgb(192, 126, 20);
+}
+
+.checkItem{
+    display: flex;
+    gap: calc(var(--pad-gap)/2);
+    border:0.02em solid rgb(70, 194, 146);
+    background-color: rgb(192, 20, 183);   
+}
+
+
+.checkmarkUnchecked{
+    visibility: hidden;
+}
+
+
+
+
+
+.checkmarkChecked{
+    visibility: visible;
+}
+
+
+.itemTaskNameChecked{
+    color: rgb(255, 255, 255);
+    text-decoration: line-through;
+}
+
+.itemTaskNameUnchecked{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+.itemTaskNameEdit{
+    background-color: springgreen;
+    width: 100%;
+}
+
+
+/* ///////////////////////////// */
+
+
+
+
+
+/* ///////////////////////////////// */
+
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+/* :::::::::::::::MEDIA QUERY ::::::::::::::::::::::::: */
+
+@media screen and (min-width: 30em) {
+    .appName{
+        display: inline-block;
+    }
+  }
+
+
+  @media screen and (min-width: 55em) {
+
+    .topHeader{
+        padding: calc(var(--pad-gap)*1.5) calc(var(--pad-gap)*4);
+       
+    }
+
+    .rootItem{
+        padding: 0 calc(var(--pad-gap)*6.5);
+    }
+  }
+  
